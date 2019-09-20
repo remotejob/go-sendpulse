@@ -10,19 +10,19 @@ type apiSmtp struct {
 	client *resty.Client
 }
 
-type SuccessResponse struct {
+type successResponse struct {
 	Result bool `json:"result"`
 }
 
-type ErrorResponse struct {
+type errorResponse struct {
 	Code    int    `json:"error_code"`
 	Message string `json:"message"`
 }
 
 func (a *apiSmtp) Send(email *Email) error {
 	var (
-		successResp SuccessResponse
-		errResp     ErrorResponse
+		successResp successResponse
+		errResp     errorResponse
 	)
 
 	resp, err := a.client.R().
