@@ -14,11 +14,12 @@ type Sendpulse struct {
 	SMTP *apiSmtp
 }
 
-func New(clientId, clientSecret string) *Sendpulse {
+func New(clientId, clientSecret string, debug bool) *Sendpulse {
 	oauthClient := newOAuthClient(clientId, clientSecret)
 
 	client := resty.NewWithClient(oauthClient)
 	client.SetHostURL("https://api.sendpulse.com")
+	client.SetDebug(debug)
 
 	return &Sendpulse{
 		client: client,
