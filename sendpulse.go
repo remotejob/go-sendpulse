@@ -11,7 +11,7 @@ import (
 type Sendpulse struct {
 	client *resty.Client
 
-	SMTP *apiSmtp
+	// SMTP *apiSmtp
 }
 
 func New(clientId, clientSecret string, debug bool) *Sendpulse {
@@ -23,7 +23,7 @@ func New(clientId, clientSecret string, debug bool) *Sendpulse {
 
 	return &Sendpulse{
 		client: client,
-		SMTP:   &apiSmtp{client},
+		// SMTP:   &apiSmtp{client},
 	}
 }
 
