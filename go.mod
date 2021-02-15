@@ -1,4 +1,4 @@
-module github.com/ont/go-sendpulse
+module github.com/remotejob/go-sendpulse
 
 go 1.12
 
